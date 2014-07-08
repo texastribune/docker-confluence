@@ -1,2 +1,15 @@
-FROM texastribune/jre
+FROM debian:jessie
 MAINTAINER tech@texastribune.org
+
+ADD http://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-5.5.3-x64.bin /confluence.bin
+RUN chmod +x /confluence.bin
+
+ADD response.varfile /
+RUN /confluence.bin -q -varfile /response.varfile
+
+EXPOSE 8090
+
+VOLUME /var/atlassian
+VOLUME /opt/atlassian/confluence/logs
+
+CMD ["/opt/atlassian/confluence/bin/start-confluence.sh", "-fg"]
