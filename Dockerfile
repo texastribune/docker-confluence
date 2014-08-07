@@ -10,6 +10,6 @@ RUN /confluence.bin -q -varfile /response.varfile
 EXPOSE 8090
 
 VOLUME /var/atlassian
-VOLUME /opt/atlassian/confluence/logs
+VOLUME /opt/atlassian/confluence
 
 CMD ["/opt/atlassian/confluence/bin/start-confluence.sh", "-fg"]
