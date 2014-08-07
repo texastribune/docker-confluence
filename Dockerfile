@@ -1,7 +1,7 @@
 FROM debian:jessie
 MAINTAINER tech@texastribune.org
 
-ADD http://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-5.5.3-x64.bin /confluence.bin
+ADD http://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-5.5.4-x64.bin /confluence.bin
 RUN chmod +x /confluence.bin
 
 ADD response.varfile /
